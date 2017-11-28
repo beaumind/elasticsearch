@@ -1034,7 +1034,9 @@ class Query
             $model->setType($row["_type"]);
 
             // match earlier version
-
+            if ($row['inner_hits']) {
+                $model->inner_hits = $row["inner_hits"];
+            }
             $model->_index = $row["_index"];
             $model->_type = $row["_type"];
             $model->_id = $row["_id"];
