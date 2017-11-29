@@ -921,7 +921,7 @@ class Query
             $model->setType($row["_type"]);
 
             // match earlier version
-             if ($row['inner_hits']) {
+            if (array_key_exists('inner_hits', $row)) {
                 $model->inner_hits = $row["inner_hits"];
             }
             $model->_index = $row["_index"];
